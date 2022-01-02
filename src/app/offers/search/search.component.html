@@ -1,0 +1,63 @@
+<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h2>Manage <b>Offers</b></h2>
+					</div>
+				
+				</div>
+			</div>
+      <h3>Rechercher une offre</h3>
+
+  <form [formGroup]="offerForm" (submit)="searchOffer()" class="form-inline mb-4">
+    <label class="sr-only" for="Name">Name</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="name" placeholder="nom de employe">
+    </div>
+
+    <label class="sr-only" for="VilleD">ville de depart/arrrive</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="ville" placeholder="ville de depart/arrrive">
+    </div>
+
+    <label class="sr-only" for="dateO">date de offre</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <select formControlName="dateO" class="form-control">
+        <option>Basic</option>
+        <option>Pro</option>
+        <option>Platinum</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Recherche</button>
+  </form>
+  <script type="text/template" id="myHtml">
+    <h3>Resultat de la recherche</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-primary">
+
+          <th scope="col">Name</th>
+          <th scope="col">ville depart</th>
+          <th scope="col">ville arrive</th>
+          <th scope="col">date offre</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+        </tr>
+        <tr>
+        <tr *ngFor="let offer of (offers$ |async)">
+          <th scope="row">{{offer.name}}</th>
+          <td>{{offer.villeD}}</td>
+          <td>{{offer.villeA}}</td>
+          <td>{{offer.dateO}}</td>
+          <th>
+            <a (click)=editOffer(offer)>edit</a>
+            <br>
+            <a (click)=deleteOffer(offer)>delete</a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+</script>

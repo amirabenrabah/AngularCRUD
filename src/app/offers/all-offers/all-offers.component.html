@@ -1,0 +1,45 @@
+<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h3>Rechercher les <b>Offers</b></h3>
+					</div>
+
+				</div>
+			</div>
+<label class="sr-only" for="Name">Name</label>
+<div class="input-group mb-2 mr-sm-2">
+  <input type="text" class="form-control" [(ngModel)]="search" placeholder="Rechercher nom de l’employé">
+</div>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<table class="table table-hover" id="table">
+ <thead id="aj">
+    <tr>
+
+      <th scope="col">Nom De l'Employé</th>
+      <th scope="col" >Ville De Départ</th>
+      <th scope="col">Ville D'arrivée</th>
+      <th scope="col">Date De l'Offre</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+    </tr>
+    <tr>
+    <tr *ngFor="let offer of (offers$ |async) | searchfilter:search ">
+      <th scope="row">{{offer.name}}</th>
+      <td>{{offer.villeD}}</td>
+      <td>{{offer.villeA}}</td>
+      <td>{{offer.dateO}}</td>
+
+
+      <th>
+        <a class="add" title="Edit" data-toggle="tooltip"(click)=editOffer(offer)><i class="material-icons">&#xE254; </i></a>
+        <br>
+        <a class="delete" title="Delete" data-toggle="tooltip"(click)=deleteOffer(offer)><i class="material-icons">&#xE872;</i></a>
+      </th>
+    </tr>
+  </tbody>
+</table>

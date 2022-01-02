@@ -1,0 +1,25 @@
+{
+  "offers": [
+    {
+      "name": "Nouara Zaiter ",
+      "villeD": "Alg ",
+      "villeA": "El-Harrach",
+      "dateO": "2021-04-30",
+      "id": 1
+    },
+    {
+      "name": "Amira Benrabah",
+      "villeD": "Alger",
+      "villeA": "Zeralda",
+      "dateO": "2021-05-09",
+      "id": 2
+    },
+    {
+      "name": "Nouaaara",
+      "villeD": "Alger",
+      "villeA": "Tipaza",
+      "dateO": "2021-05-22",
+      "id": 3
+    }
+  ]
+}

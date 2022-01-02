@@ -1,0 +1,34 @@
+#table {
+  border-color: #B2EBF2;
+}
+table.table th a.add {
+    color: #27C46B;
+}
+table.table th a.edit {
+    color: #FFC107;
+}
+table.table th a.delete {
+    color: #E34724;
+}
+table.table th i {
+    font-size: 19px;
+}
+table.table th a.add i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+}
+table.table th a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 24px;
+}
+h3{
+  color: #FF5722;
+  font-style: italic;
+}
+#aj{
+  background-color: #B2EBF2;
+}
